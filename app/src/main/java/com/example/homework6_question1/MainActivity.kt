@@ -39,14 +39,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnShowInfo.setOnClickListener {
-            binding.tvShowInfo.text="Full name: ${sharedPreferences.getString(name,name)}\n" +
-                    "User name:${sharedPreferences.getString(userName, userName)}\n" +
-                    "Email:${sharedPreferences.getString(email, email)}\n" +
-                    "Password: ${sharedPreferences.getString(password, password)}\n" +
-                    "Full name: ${sharedPreferences.getString(gender, gender)}\n"
-
-        }
+//        binding.btnShowInfo.setOnClickListener {
+//            binding.tvShowInfo.text="Full name: ${sharedPreferences.getString(name,name)}\n" +
+//                    "User name:${sharedPreferences.getString(userName, userName)}\n" +
+//                    "Email:${sharedPreferences.getString(email, email)}\n" +
+//                    "Password: ${sharedPreferences.getString(password, password)}\n" +
+//                    "Full name: ${sharedPreferences.getString(gender, gender)}\n"
+//
+//        }
 
     }
 }

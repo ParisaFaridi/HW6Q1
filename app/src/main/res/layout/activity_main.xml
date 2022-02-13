@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="24dp"
         tools:context=".MainActivity">
 
         <EditText
@@ -124,14 +124,18 @@
                 android:layout_height="wrap_content"
                 android:text="Female "
                 tools:layout_editor_absoluteX="128dp"
-                tools:layout_editor_absoluteY="478dp"></RadioButton>
+                tools:layout_editor_absoluteY="478dp">
+
+            </RadioButton>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male"
                 tools:layout_editor_absoluteX="179dp"
-                tools:layout_editor_absoluteY="477dp"></RadioButton>
+                tools:layout_editor_absoluteY="477dp">
+
+            </RadioButton>
 
         </RadioGroup>
 
@@ -149,7 +153,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"></Button>
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+        </Button>
 
         <Button
             android:id="@+id/btnShowInfo"
@@ -166,15 +172,79 @@
             app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
         <TextView
-            android:id="@+id/tvShowInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tvFullNameResult"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
             android:layout_marginTop="24dp"
-            android:text="TextView"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#E91E63"
+            android:text="Full Name"
             app:layout_constraintEnd_toEndOf="@+id/btnShowInfo"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/btnShowInfo"
             app:layout_constraintTop_toBottomOf="@+id/btnShowInfo" />
+
+        <TextView
+            android:id="@+id/tvUserNameResult"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#E91E63"
+            android:text="UserName"
+            app:layout_constraintEnd_toEndOf="@+id/tvFullNameResult"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/btnShowInfo"
+            app:layout_constraintTop_toBottomOf="@+id/tvFullNameResult" />
+
+        <TextView
+            android:id="@+id/tvEmailResult"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#E91E63"
+            android:text="Email"
+            app:layout_constraintEnd_toEndOf="@+id/tvUserNameResult"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tvUserNameResult"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserNameResult" />
+
+        <TextView
+            android:id="@+id/tvPasswordResult"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#E91E63"
+            android:text="Password"
+            app:layout_constraintEnd_toEndOf="@+id/tvUserNameResult"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tvUserNameResult"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailResult" />
+
+        <TextView
+            android:id="@+id/tvGenderResult"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#E91E63"
+            android:text="Gender"
+            app:layout_constraintEnd_toEndOf="@+id/tvPasswordResult"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tvPasswordResult"
+            app:layout_constraintTop_toBottomOf="@+id/tvPasswordResult" />/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
