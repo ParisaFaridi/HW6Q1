@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 binding.etUserName.error="Your username cannot be less than 4 characters"
 
 
-            if (binding.etRetypePassword.text.toString()!=binding.etPassword.text.toString())
+            else if (binding.etRetypePassword.text.toString()!=binding.etPassword.text.toString())
                 binding.etRetypePassword.error=" password and retyped passwords don't match!"
             else {
                 name = binding.etFullName.text.toString()
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
                 gender = findViewById<RadioButton>(checkedGenderRadioButton).text.toString()
 
                 editor.apply {
-                    putString("Full Name", name)
-                    putString("User Name", userName)
+                    putString("Full_Name", name)
+                    putString("User_Name", userName)
                     putString("Email", email)
                     putString("PassWord", password)
                     putString("Gender", gender)
@@ -54,12 +54,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.btnShowInfo.setOnClickListener {
-
-            binding.tvFullNameResult.text=sharedPreferences.getString(name,name)
-            binding.tvUserNameResult.text=sharedPreferences.getString(userName,userName)
-            binding.tvEmailResult.text=sharedPreferences.getString(email,email)
-            binding.tvPasswordResult.text=sharedPreferences.getString(password,password)
-            binding.tvGenderResult.text=sharedPreferences.getString(gender,gender)
+            binding.tvFullNameResult.text=sharedPreferences.getString("Full_Name","Unknown")
+            binding.tvUserNameResult.text=sharedPreferences.getString("User_Name","No user Name")
+            binding.tvEmailResult.text=sharedPreferences.getString("Email","no email")
+            binding.tvPasswordResult.text=sharedPreferences.getString("PassWord","no password")
+            binding.tvGenderResult.text=sharedPreferences.getString("Gender","Not specified")
 
             binding.tvFullNameResult.visibility = View.VISIBLE
             binding.tvUserNameResult.visibility = View.VISIBLE
