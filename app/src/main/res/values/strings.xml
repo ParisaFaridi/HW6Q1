@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">HomeWork6_Question1</string>
+    <string name="hide_info">Hide Info</string>
+    <string name="gender">Gender</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="username">UserName</string>
+    <string name="full_name">Full Name</string>
+    <string name="show_info">Show Info</string>
+    <string name="register">Register</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="retype_password">Retype Password</string>
+
 </resources>

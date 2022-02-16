@@ -8,12 +8,12 @@ import android.widget.Toast
 import com.example.homework6_question1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
-    lateinit var name :String
-    lateinit var userName:String
-    lateinit var email :String
-    lateinit var password :String
-    lateinit var gender :String
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var name :String
+    private lateinit var userName:String
+    private lateinit var email :String
+    private lateinit var password :String
+    private lateinit var gender :String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -25,32 +25,31 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener{
 
-            if (binding.etFullName.text.toString().length < 5)
-                binding.etFullName.error="Your name cannot be less than 5 characters"
+            when {
+                binding.etFullName.text.toString().length < 5 -> binding.etFullName.error=
+                    "Your name cannot be less than 5 characters"
+                binding.etUserName.text.toString().length < 4 -> binding.etUserName.error=
+                    "Your username cannot be less than 4 characters"
+                binding.etRetypePassword.text.toString()!=binding.etPassword.text.toString() ->
+                    binding.etRetypePassword.error=" password and retyped passwords don't match!"
+                else -> {
+                    name = binding.etFullName.text.toString()
+                    userName = binding.etUserName.text.toString()
+                    email = binding.etEmail.text.toString()
+                    password = binding.etPassword.text.toString()
+                    val checkedGenderRadioButton = binding.radioGroup.checkedRadioButtonId
+                    gender = findViewById<RadioButton>(checkedGenderRadioButton).text.toString()
 
-            else if (binding.etUserName.text.toString().length < 4)
-                binding.etUserName.error="Your username cannot be less than 4 characters"
-
-
-            else if (binding.etRetypePassword.text.toString()!=binding.etPassword.text.toString())
-                binding.etRetypePassword.error=" password and retyped passwords don't match!"
-            else {
-                name = binding.etFullName.text.toString()
-                userName = binding.etUserName.text.toString()
-                email = binding.etEmail.text.toString()
-                password = binding.etPassword.text.toString()
-                val checkedGenderRadioButton = binding.radioGroup.checkedRadioButtonId
-                gender = findViewById<RadioButton>(checkedGenderRadioButton).text.toString()
-
-                editor.apply {
-                    putString("Full_Name", name)
-                    putString("User_Name", userName)
-                    putString("Email", email)
-                    putString("PassWord", password)
-                    putString("Gender", gender)
-                    apply()
+                    editor.apply {
+                        putString("Full_Name", name)
+                        putString("User_Name", userName)
+                        putString("Email", email)
+                        putString("PassWord", password)
+                        putString("Gender", gender)
+                        apply()
+                    }
+                    Toast.makeText(this, "Registration was successful.", Toast.LENGTH_SHORT).show()
                 }
-                Toast.makeText(this, "Registration was successful.", Toast.LENGTH_SHORT).show()
             }
         }
         binding.btnShowInfo.setOnClickListener {
