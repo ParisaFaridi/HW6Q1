@@ -58,22 +58,12 @@ class MainActivity : AppCompatActivity() {
             binding.tvEmailResult.text=sharedPreferences.getString("Email","no email")
             binding.tvPasswordResult.text=sharedPreferences.getString("PassWord","no password")
             binding.tvGenderResult.text=sharedPreferences.getString("Gender","Not specified")
+            binding.resultGroup.visibility=View.VISIBLE
 
-            binding.tvFullNameResult.visibility = View.VISIBLE
-            binding.tvUserNameResult.visibility = View.VISIBLE
-            binding.tvEmailResult.visibility = View.VISIBLE
-            binding.tvPasswordResult.visibility = View.VISIBLE
-            binding.tvGenderResult.visibility = View.VISIBLE
-            binding.btnHideInfo.visibility=View.VISIBLE
         }
 
         binding.btnHideInfo.setOnClickListener {
-            binding.tvFullNameResult.visibility = View.GONE
-            binding.tvUserNameResult.visibility = View.GONE
-            binding.tvEmailResult.visibility = View.GONE
-            binding.tvPasswordResult.visibility = View.GONE
-            binding.tvGenderResult.visibility = View.GONE
-            binding.btnHideInfo.visibility=View.GONE
+            binding.resultGroup.visibility=View.GONE
 
         }
     }

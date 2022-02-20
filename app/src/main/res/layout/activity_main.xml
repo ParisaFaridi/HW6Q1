@@ -27,9 +27,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </EditText>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
             android:id="@+id/etUserName"
@@ -45,9 +43,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etFullName">
+            app:layout_constraintTop_toBottomOf="@+id/etFullName"/>
 
-        </EditText>
 
         <EditText
             android:id="@+id/etEmail"
@@ -63,9 +60,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etUserName">
-
-        </EditText>
+            app:layout_constraintTop_toBottomOf="@+id/etUserName"/>
 
         <EditText
             android:id="@+id/etPassword"
@@ -81,9 +76,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEmail">
+            app:layout_constraintTop_toBottomOf="@+id/etEmail"/>
 
-        </EditText>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword">
 
         <EditText
             android:id="@+id/etRetypePassword"
@@ -95,13 +97,8 @@
             android:layout_marginEnd="24dp"
             android:hint="@string/retype_password"
             android:inputType="textPassword"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword">
-
-        </EditText>
+            android:minHeight="48dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/tvGender"
@@ -113,7 +110,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etRetypePassword" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordlayout" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -131,9 +128,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/female"
                 tools:layout_editor_absoluteX="128dp"
-                tools:layout_editor_absoluteY="478dp">
-
-            </RadioButton>
+                tools:layout_editor_absoluteY="478dp"/>
 
             <RadioButton
                 android:id="@+id/btnRadioMale"
@@ -141,9 +136,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/male"
                 tools:layout_editor_absoluteX="179dp"
-                tools:layout_editor_absoluteY="477dp">
-
-            </RadioButton>
+                tools:layout_editor_absoluteY="477dp"/>
 
         </RadioGroup>
 
@@ -161,9 +154,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup">
-
-        </Button>
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
 
         <Button
             android:id="@+id/btnShowInfo"
@@ -290,6 +281,11 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/btnShowInfo"
             app:layout_constraintTop_toBottomOf="@+id/tvGenderResult" />
-
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/result_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tvFullNameResult,
+        tvEmailResult,tvGender,tvPasswordResult,tvUserNameResult,btnHideInfo"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
